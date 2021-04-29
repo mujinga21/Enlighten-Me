@@ -24,7 +24,7 @@
         {{#if loggedIn}}
         <a id="logout" href="/logout">Logout</a>
         {{else}}
-        <a href="/login">Login</a>
+        <a id="login" href="/login">Login</a>
         {{/if}}
       </div>
       <div class="container">
@@ -37,7 +37,7 @@
     </div>
   </nav>
   <main>
-    <div class="posts">
+    <div class="posts container">
       {{{body}}}
     </div>
   </main>
