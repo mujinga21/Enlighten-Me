@@ -63,12 +63,34 @@ h1 {
 }
 
 .user-form {
-    position: absolute;
-    top: 50%;
-    left: 52%;
-    transform: translate(-50%, -50%);
+    margin-top: 5%;
     color: #78A1BB;
-    border: 2px solid #78A1BB;
-    border-radius: 5px;
-    padding: 10px;
+    border: 1px solid #78A1BB;
+    border-radius: 8px;
+    padding: 25px;
+    background: white;
+    animation: Slide_Up 3s ease;
+}
+
+.signup-form,
+.signup-header {
+    padding-left: 16px;
+}
+
+.form-input {
+    border-bottom: 2px solid #78A1BB;
+}
+
+#login,
+#logout {
+    font-size: 20px;
+}
+
+@keyframes Slide_Up{
+    0%{
+        transform:translateY(600px);
+    }
+    100%{
+        transform: translateY(0);
+    }
 }
