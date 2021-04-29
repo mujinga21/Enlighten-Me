@@ -45,7 +45,7 @@ router.get("/", async (req, res) => {
 
 router.put("/:post_id", (req, res) => {
   Post.update(
-    {cd 
+    {
       title: req.body.title,
       content: req.body.content,
     },
