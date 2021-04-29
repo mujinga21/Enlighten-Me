@@ -1,15 +1,17 @@
-function getRandomActivity() {
-    var randomNumber = Math.floor(Math.random() * activities.length);
-    return activities[randomNumber];
+function getAPI () {
+    var requestURL = 'http://www.boredapi.com/api/activity/' ;
+
+    fetch(requestURL)
+    .then(function (response) { 
+        console.log(response)
+      return response.json();
+    })
+    .then(function (data) {
+        console.log(data)
+    })
+
 }
 
-var randomActivity = getRandomActivity();
-displayActivityData(randomActivity);
 
-function displayActivityData(activity) {
-    console.log(activity);
 
-    fetch(
-        "http://www.boredapi.com/api/activity/"
-    )
-}
+getAPI() 
