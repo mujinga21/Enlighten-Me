@@ -3,7 +3,7 @@ const { Post, User } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", (req, res) => {
-  res.render("main");
+  res.render("homepage");
 });
 
 // If user is logged in, redirect to homepage, otherwise render login
