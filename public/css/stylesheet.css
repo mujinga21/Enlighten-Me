@@ -74,14 +74,14 @@ display: none;
     border-radius: 8px;
     padding: 25px;
     background: white;
-    /* animation: Slide_Up 3s ease; */
+    animation: Slide_Up 3s ease;
 }
 
 .label {
     
 }
 
-/* .signup-form,
+.signup-form,
 .signup-header {
     padding-left: 16px;
 }
@@ -102,4 +102,4 @@ display: none;
     100%{
         transform: translateY(0);
     }
-} */
+}

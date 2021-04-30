@@ -16,11 +16,21 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+// router.get("/homepage", (req, res) => {
+//   res.render("homepage"),
+// });
+
 router.get("/homepage", (req, res) => {
-  res.render("homepage");
+  try {
+    res.render("homepage", {
+      logged_in: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-router.get("/users", withAuth, async (req, res) => {
+router.get("/user", withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
       include: [
@@ -36,8 +46,9 @@ router.get("/users", withAuth, async (req, res) => {
     const posts = postData.map((post) => post.get({ plain: true }));
 
     res.render("profile", {
+      ...user,
       posts,
-      logged_in: req.session.logged_in,
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);
