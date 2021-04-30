@@ -23,4 +23,15 @@ $(document).ready(() => {
     }
     
     getAPI();
+
+    // DISPLAY PRICE QUESTION ---------------------------------------------------------------
+    $(document).on("click", ".solo", (event) => {
+        event.preventDefault();
+        $(".img-container").addClass("hide");
+        $(".img-container").addClass("hide");
+        $("#priceForm").removeClass("hide");
+        return;
+    });
+
+    
 });
