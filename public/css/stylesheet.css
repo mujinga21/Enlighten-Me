@@ -94,6 +94,12 @@ display: none;
     color: #78A1BB;
     font-size: 20px;
 }
+.no-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
 
 #login,
 #logout {

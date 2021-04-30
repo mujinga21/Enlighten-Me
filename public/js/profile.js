@@ -1,46 +1,29 @@
 const newFormHandler = async (event) => {
-    event.preventDefault();
-  //look into this part
-    const name = document.querySelector('#post-title').value.trim();
-    const description = document.querySelector('#post-body').value.trim();
-  
-    if (title && body) {
-      const response = await fetch(`/api/posts`, {
-        method: 'POST',
-        body: JSON.stringify({ title,body }),
-        headers: {
-          'Body-Type': 'application/json',
-        },
-      });
-  
-      if (response.ok) {
-        document.location.replace('/profile');
-      } else {
-        alert('Failed to create post');
-      }
+  event.preventDefault();
+
+  const title = document.querySelector("#postTitle").value.trim();
+  const post = document.querySelector("#postText").value.trim();
+
+  console.log(title);
+  console.log(post);
+
+  if (post && title) {
+    const response = await fetch(`/api/posts`, {
+      method: "POST",
+      body: JSON.stringify({ title, post }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (response.ok) {
+      document.location.replace("/users");
+    } else {
+      alert("Failed to create post");
     }
-  };
-  
-  const delButtonHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
-  
-      const response = await fetch(`/api/posts/${id}`, {
-        method: 'DELETE',
-      });
-  
-      if (response.ok) {
-        document.location.replace('/profile');
-      } else {
-        alert('Failed to delete post');
-      }
-    }
-  };
-  
-  document
-    .querySelector('.new-post-form')
-    .addEventListener('submit', newFormHandler);
-  
-  document
-    .querySelector('.post-list')
-    .addEventListener('click', delButtonHandler);
+  }
+};
+
+document
+  .querySelector(".new-post-form")
+  .addEventListener("submit", newFormHandler);
