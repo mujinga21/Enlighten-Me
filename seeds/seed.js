@@ -13,10 +13,11 @@ const seedDatabase = async () => {
   });
 
   // for (const post of postData) {
-  //   await post.create({
-  //     ...post,
-  //     user_id: users[Math.floor(Math.random() * users.length)].id,
-  //   });
+    await Post.create({
+      title: postData[0].title,
+     body: postData[0].body,
+      userId: 1,
+    });
   // }
 
   process.exit(0);
