@@ -21,8 +21,8 @@
   <nav>
     <div class="jumbotron jumbotron-fluid text-center">
       <div class="text-right align-top login-out">
-        {{#if loggedIn}}
-        <a id="logout" href="/logout">Logout</a>
+        {{#if logged_in}}
+        <a id="logout">Logout</a>
         {{else}}
         <a id="login" href="/login">Login</a>
         {{/if}}
@@ -41,7 +41,7 @@
       {{{body}}}
     </div>
   </main>
-  {{#if loggedIn}}
+  {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
