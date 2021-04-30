@@ -2,18 +2,23 @@ const router = require("express").Router();
 const { Post } = require("../../models");
 // const withAuth = require("../../utils/auth");
 
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
+  console.log(req.body.body);
   try {
     const postData = await Post.create({
-      ...req.body,
+      title: req.body.title,
+      body: req.body.post,
+      userId: req.session.user_id,
     });
 
     res.status(200).json(postData);
   } catch (err) {
+    console.log(err);
     res.status(400).json(err);
   }
 });
-router.get('/:id', async (req, res) => {
+
+router.get("/:id", async (req, res) => {
   console.log("hello world");
   try {
     const postData = await Post.findOne({
@@ -28,7 +33,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   console.log("hello world");
   try {
     const postData = await Post.findAll({
@@ -43,7 +48,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.put('/:post_id', (req, res) => {
+router.put("/:post_id", (req, res) => {
   Post.update(
     {
       title: req.body.title,
@@ -64,7 +69,7 @@ router.put('/:post_id', (req, res) => {
     });
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
     const postData = await Post.destroy({
       where: {
