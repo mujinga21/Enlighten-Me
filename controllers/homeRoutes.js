@@ -3,6 +3,11 @@ const { Post, User } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect("/homepage");
+    return;
+  }
+
   res.render("login");
 });
 
@@ -16,41 +21,34 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-// router.get("/homepage", (req, res) => {
-//   res.render("homepage"),
-// });
-
 router.get("/homepage", (req, res) => {
   try {
     res.render("homepage", {
-      logged_in: true,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get("/user", withAuth, async (req, res) => {
+router.get("/users", withAuth, async (req, res) => {
   try {
-    const postData = await Post.findAll({
+    const exampleData = await Post.findAll({
       include: [
         {
           model: User,
-        },
-        {
-          model: Post,
+          attributes: ["username"],
         },
       ],
     });
-
-    const posts = postData.map((post) => post.get({ plain: true }));
-
+    const serializedData = exampleData.map((data) => data.get({ plain: true }));
+    console.log(serializedData);
     res.render("profile", {
-      ...user,
-      posts,
+      serializedData,
       logged_in: true,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
