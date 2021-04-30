@@ -64,7 +64,7 @@ h1 {
 }
 
 .title {
-  padding: 5px;
+    padding: 20px;
 }
 
 .user-form {
@@ -89,6 +89,10 @@ h1 {
   border-bottom: 2px solid #78a1bb;
 }
 
+#priceForm {
+    color: #78A1BB;
+    font-size: 20px;
+}
 .no-button {
   background: none;
   border: none;
