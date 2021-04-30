@@ -1,10 +1,9 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
   //look into this part
-    const name = document.querySelector('#post-title').value.trim();
-    const description = document.querySelector('#post-body').value.trim();
+    const post = document.querySelector('#post-title').value.trim();
   
-    if (title && body) {
+    if () {
       const response = await fetch(`/api/posts`, {
         method: 'POST',
         body: JSON.stringify({ title,body }),

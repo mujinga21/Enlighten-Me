@@ -1,18 +1,24 @@
 <div class="title">
-<h1 class="text-center">Your random activity</h1>
+    <h1 class="text-center">Your random activity</h1>
 </div>
-
+Hewwo?
+{{#each serializedData as |data|}}
+{{data.title}}
+{{data.body}}
+{{data.date_created}}
+{{data.user.username}}
+{{/each}}
 <div class="container">
     <div class="d-flex justify-content-center justify-content-between">
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Add a comment</h3>
-    <form class="form new-comment-form">
-      <div class="form-group">
-        <label for="comment-name">comment name:</label>
-        <input class="form-input" type="text" />
-      </div>
-    </form>
-  </div>
-</div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h3>Add a comment</h3>
+                <form class="form new-comment-form">
+                    <div class="form-group">
+                        <label for="comment-name">comment name:</label>
+                        <input class="form-input" type="text" />
+                    </div>
+                </form>
+            </div>
+        </div>
