@@ -1,14 +1,14 @@
 body {
-    background-color: #EBF5EE;
+  background-color: #ebf5ee;
 }
 
 a {
-    color: #283044;
-    text-decoration: none;
-    background-color: transparent;
-    padding-left: 15px;
-    font-weight: 500;
-    font-family: 'Catamaran', sans-serif;
+  color: #283044;
+  text-decoration: none;
+  background-color: transparent;
+  padding-left: 15px;
+  font-weight: 500;
+  font-family: "Catamaran", sans-serif;
 }
 
 h1 {
@@ -17,96 +17,107 @@ h1 {
 }
 
 .hide {
-display: none;
+  display: none;
 }
 
 .posts {
-    background-color: #EBF5EE;
+  background-color: #ebf5ee;
 }
 
 .container {
-    width: 600px;
+  width: 600px;
 }
 
 .jumbotron {
   height: auto;
   padding: 5px 0 !important;
-  background-color: #78A1BB;
+  background-color: #78a1bb;
   margin: auto;
 }
 
 .display-4 {
-    padding: 5px;
+  padding: 5px;
 }
 
 .login-out {
-    padding-right: 15px;
-    background-color: #78A1BB;
-    padding-top: 5px;
+  padding-right: 15px;
+  background-color: #78a1bb;
+  padding-top: 5px;
 }
 
 .links {
-    padding-bottom: 5px;
+  padding-bottom: 5px;
 }
 
 .img-container {
-    position: relative;
+  position: relative;
   text-align: center;
 }
 
 .centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #78A1BB;
-    font-size: 45px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #78a1bb;
+  font-size: 45px;
 }
 
 .title {
-    padding: 5px;
+  padding: 5px;
 }
 
 .user-form {
-    margin-top: 5%;
-    color: #78A1BB;
-    border: 1px solid #78A1BB;
-    border-radius: 8px;
-    padding: 25px;
-    background: white;
-    animation: Slide_Up 3s ease;
+  margin-top: 5%;
+  color: #78a1bb;
+  border: 1px solid #78a1bb;
+  border-radius: 8px;
+  padding: 25px;
+  background: white;
+  animation: Slide_Up 3s ease;
 }
 
 .label {
-    
 }
 
 .signup-form,
 .signup-header {
-    padding-left: 16px;
+  padding-left: 16px;
 }
 
 .form-input {
-    border-bottom: 2px solid #78A1BB;
+  border-bottom: 2px solid #78a1bb;
 }
 
 .no-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-  }
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
 
 #login,
 #logout {
-    font-size: 20px;
+  font-size: 20px;
 }
 
-@keyframes Slide_Up{
-    0%{
-        transform:translateY(600px);
-    }
-    100%{
-        transform: translateY(0);
-    }
+@keyframes Slide_Up {
+  0% {
+    transform: translateY(600px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.card {
+  position: relative;
+  text-align: center;
+  border: 1px solid #78a1bb;
+  border-radius: 8px;
+  padding-left: 10px;
+}
+
+.btn {
+  background-color: #283044;
 }
