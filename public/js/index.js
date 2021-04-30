@@ -1,7 +1,6 @@
 $(document).ready(() => {
   // VARIABLES -----------------------------------------------------------------------
-  var requestURL = "http://www.boredapi.com/api/activity?";
-
+  var requestURL = "http://www.boredapi.com/api/activity?"
 
   // ARRAYS --------------------------------------------------------------------------
   var activitiesData = [];
@@ -9,6 +8,7 @@ $(document).ready(() => {
 
   // API bored fetch to get data
   function getAPI() {
+
       for (var i = 0; i < 3; i++) {
           fetch(requestURL)
           .then(function (response) {
@@ -18,20 +18,38 @@ $(document).ready(() => {
             .then(function (data) {
                 activitiesData.push(data);
                 console.log(activitiesData);
+                if (i <= 3) {
+                    return;
+                } else {
+                    getAPI();
+                }
             });
         };
     }
     
-    getAPI();
-
+    
     // DISPLAY PRICE QUESTION ---------------------------------------------------------------
     $(document).on("click", ".solo", (event) => {
         event.preventDefault();
         $(".img-container").addClass("hide");
         $(".img-container").addClass("hide");
         $("#priceForm").removeClass("hide");
-        return;
     });
-
     
+    
+    // PRICE INPUT FOR API FETCH ---------------------------------------------------------------
+    $(document).on("click", "#priceBtn", (event) => {
+        event.preventDefault();
+        var priceInput = $("#price").val();
+        console.log(priceInput);
+        if (priceInput !== "y" && priceInput !== "n"){
+            alert("Invalid response please type y/n");
+            return;
+        } else {
+            getAPI();
+        }
+    })
+    
+    
+
 });

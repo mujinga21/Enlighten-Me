@@ -13,6 +13,7 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
 router.get('/:id', async (req, res) => {
   console.log("hello world");
   try {
