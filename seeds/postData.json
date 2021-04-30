@@ -1,7 +1,16 @@
 [
   {
     "title": "Activity",
-    "body": "This activity was so much fun!"
+    "body": "This activity was so much fun!",
+    "user_id": 3
+
+    
+  },
+  {
+    "title": "Activity",
+    "body": "This activity was so much fun!",
+    "user_id": 4
+
     
   }
 ]
