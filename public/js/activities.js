@@ -1,3 +1,11 @@
+
+// $(document).ready(() =>{
+// var titles = JSON.parse(localStorage.getItem("titles"));
+// // $(".activeOne").append(titles[1])
+// console.log(titles)
+
+// })
+
 // VARIABLES
 var firstActivity = document.getElementById("activityOne");
 var secondActivity = document.getElementById("activityTwo");
@@ -85,3 +93,4 @@ if (soloOrSocial === "solo") {
   getSocialAPI();
   //   renderActivities();
 }
+
