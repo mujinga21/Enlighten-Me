@@ -1,24 +1,40 @@
 <div class="title">
     <h1 class="text-center">Your random activity</h1>
 </div>
-{{#each serializedData as |data|}}
-{{data.title}}
-{{data.body}}
-{{data.date_created}}
-{{data.user.username}}
-{{/each}}
 
-<h3>Add a post!</h3>
-<form class="new-post-form">
-    <div class="form-group">
-        <label for="title">Title</label>
-        <input type="title" class="form-control title" id="postTitle" placeholder="Title">
+
+<div class="card text-center container">
+    <div class="card-body">
+        <form class="new-post-form">
+            <h3 class="text-center">Add a post!</h3>
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="title" class="form-control title" id="postTitle" placeholder="Title">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Post:</label>
+                <textarea class="form-control" id="postText" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary postBtn">Submit</button>
+        </form>
     </div>
-    <div class="form-group">
-        <label for="exampleFormControlTextarea1">Post:</label>
-        <textarea class="form-control" id="postText" rows="3"></textarea>
+</div>
+
+
+{{#each serializedData as |data|}}
+<div class="card text-center mt-3 mb-3 container">
+    {{!-- <div class="card-header">
+        Activity Title
+    </div> --}}
+    <div class="card-body">
+        <h5 class="card-title">{{data.title}}</h5>
+        <p class="card-text">{{data.body}}</p>
     </div>
-    <button type="submit" class="btn btn-primary postBtn">Submit</button>
-</form>
+    <div class="card-footer text-muted">
+        -{{data.user.username}}, {{dateFormat data.date_created}}
+
+    </div>
+</div>
+{{/each}}
 
 <script src="/js/profile.js"></script>
