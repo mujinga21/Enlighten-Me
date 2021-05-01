@@ -8,12 +8,13 @@ $(document).ready(() => {
 
   // API bored fetch to get solo/free data
   function getFreeSoloAPI() {
-    for (var i = 0; i < 3; i++) {
-      if (activityPrice === "y") {
+    for (var i = 0; i < 4; i++) {
+      if (activityPrice == "n") {
         var soloURL =
           "http://www.boredapi.com/api/activity?participants=1&price=0.0";
       } else {
-        soloURL = "http://www.boredapi.com/api/activity?participants=1";
+        soloURL =
+          "http://www.boredapi.com/api/activity?participants=1&minprice=0.01&maxprice=0.1";
       }
       fetch(soloURL)
         .then(function (response) {
@@ -21,30 +22,11 @@ $(document).ready(() => {
           return response.json();
         })
         .then(function (data) {
-          activitiesData.push(data.activity);
+          activitiesData.push(data);
           console.log(activitiesData);
           window.localStorage.setItem("titles", JSON.stringify(activitiesData));
         });
-    }
-  }
-
-  // API bored fetch to get solo/paid data
-  function getPaidSoloAPI() {
-    for (var i = 0; i < 3; i++) {
-      fetch(soloPaidURL)
-        .then(function (response) {
-          console.log(response);
-          return response.json();
-        })
-        .then(function (data) {
-          activitiesData.push(data);
-          console.log(activitiesData);
-          //   if (i <= 3) {
-          //     redirectPage();
-          //   } else {
-          //     getAPI();
-          //   }
-        });
+      redirectPage();
     }
   }
 
@@ -59,12 +41,9 @@ $(document).ready(() => {
         .then(function (data) {
           activitiesData.push(data);
           console.log(activitiesData);
-          if (i <= 3) {
-            redirectPage();
-          } else {
-            getSocialAPI();
-          }
+          window.localStorage.setItem("titles", JSON.stringify(activitiesData));
         });
+      redirectPage();
     }
   };
 
@@ -101,19 +80,10 @@ $(document).ready(() => {
     titles = JSON.parse(localStorage.getItem("titles"));
     console.log(titles);
     window.location = "/activities";
+    console.log("I'm in the activities page");
   };
 
   // DISPLAY ACTIVITIES TO PAGE
   var activityPrice = localStorage.getItem("paidActivities");
   console.log(activityPrice);
-
-  //   renderSoloActivities = () => {
-  //     if (activityPrice === "y") {
-  //       getFreeSoloAPI();
-  //       console.log(activitiesData);
-  //     } else {
-  //       getPaidSoloAPI();
-  //       console.log(activitiesData);
-  //     }
-  //   };
 });
