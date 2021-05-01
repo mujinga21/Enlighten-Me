@@ -2,11 +2,8 @@ const router = require("express").Router();
 const { Post } = require("../../models");
 // const withAuth = require("../../utils/auth");
 
-
 //CREATE a post
 router.post("/", async (req, res) => {
-  
-
   try {
     const postData = await Post.create({
       title: req.body.title,
@@ -23,10 +20,7 @@ router.post("/", async (req, res) => {
 
 //GET a single post
 
-
 router.get("/:id", async (req, res) => {
-
- 
   try {
     const postData = await Post.findOne({
       where: {
