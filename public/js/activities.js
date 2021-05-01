@@ -1,10 +1,3 @@
-// $(document).ready(() =>{
-// var titles = JSON.parse(localStorage.getItem("titles"));
-// // $(".activeOne").append(titles[1])
-// console.log(titles)
-
-// })
-
 // VARIABLES
 var firstActivity = document.getElementById("activityOne");
 var secondActivity = document.getElementById("activityTwo");
@@ -71,3 +64,7 @@ if (soloOrSocial === "solo") {
 } else if (soloOrSocial === "social") {
   getSocialAPI();
 }
+
+$(document).on("click", ".activityBtn", () => {
+  $("post-form").removeClass("hide");
+});
