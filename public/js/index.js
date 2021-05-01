@@ -77,7 +77,7 @@ $(document).ready(() => {
 
   // REDIRECTS TO ACTIVITIES PAGE -------------------------------------------------------------------
   redirectPage = () => {
-    titles = JSON.parse(localStorage.getItem("titles"));
+     titles = JSON.parse(localStorage.getItem("titles"));
     console.log(titles);
     window.location = "/activities";
     console.log("I'm in the activities page");
