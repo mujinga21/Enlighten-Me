@@ -125,3 +125,7 @@ h1 {
 .btn {
   background-color: #283044;
 }
+
+.file-upload {
+  cursor: pointer !important;
+}
