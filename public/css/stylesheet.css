@@ -24,10 +24,6 @@ h1 {
   background-color: #ebf5ee;
 }
 
-.container {
-  width: 600px;
-}
-
 .jumbotron {
   height: auto;
   padding: 5px 0 !important;
@@ -56,10 +52,10 @@ h1 {
 
 .centered {
   position: absolute;
-  top: 50%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #78a1bb;
+  color: white;
   font-size: 45px;
 }
 
