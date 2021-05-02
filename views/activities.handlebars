@@ -1,15 +1,10 @@
-<div class="title">
-  <h1 class="text-center">Choose an activity</h1>
-</div>
-{{!-- {{data.activities}} --}}
-
 <div class="row">
   <div class="col-sm-4">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title activeOne" id="activityOne">Activity 1</h5>
         <p class="card-text">Activity Data Displayed Here</p>
-        <a href="#" class="btn btn-primary">Select Activity</a>
+        <a href="/users" class="btn btn-primary activityBtn">Select Activity</a>
       </div>
     </div>
   </div>
@@ -18,7 +13,7 @@
       <div class="card-body">
         <h5 class="card-title activeTwo" id="activityTwo">Activity 2</h5>
         <p class="card-text">Activity Data Displayed Here</p>
-        <a href="#" class="btn btn-primary">Select Activity</a>
+        <a href="/users" class="btn btn-primary activityBtn">Select Activity</a>
       </div>
     </div>
   </div>
@@ -27,10 +22,41 @@
       <div class="card-body">
         <h5 class="card-title activeThree" id="activityThree">Activity 3</h5>
         <p class="card-text">Activity Data Displayed Here</p>
-        <a href="#" class="btn btn-primary">Select Activity</a>
+        <a href="/users" class="btn btn-primary activityBtn">Select Activity</a>
       </div>
     </div>
   </div>
 </div>
 
-<script src="/js/activities.js"></script>
+
+
+</div>
+<div class="row">
+  <script>
+    console.log("activities page loaded.")
+  </script>
+
+  <div class="title">
+
+  </div>
+  {{data.activities}}
+
+  <div class="row">
+    <div class="col-sm-4">
+
+      <div class="title">
+
+      </div>
+      {{data.activities}}
+
+      <script>
+        console.log("activities page loaded.")
+
+  //1. grab data from localStorage
+
+  //2. create a card for each activity.
+
+  //3. append those cards into the appropriate containers on this page.
+      </script>
+
+      <script src="/js/activities.js"></script>

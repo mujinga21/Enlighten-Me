@@ -30,17 +30,12 @@ function getSoloAPI() {
       })
       .then(function (data) {
         activitiesData.push(data);
+        // window.localStorage.setItem("titles", JSON.stringify(activitiesData));
         console.log(activitiesData);
-        var titlesData = window.localStorage.setItem(
-          "titles",
-          JSON.stringify(activitiesData)
-        );
-        if (titlesData != null) {
-          // not sure whether to use inner text or text content??
-          firstActivity.innerText = titlesData[0].activity;
-          secondActivity.innerText = titlesData[1].activity;
-          thirdActivity.innerText = titlesData[2].activity;
-        }
+
+        firstActivity.innerText = activitiesData[0].activity;
+        secondActivity.innerText = activitiesData[1].activity;
+        thirdActivity.innerText = activitiesData[2].activity;
       });
   }
 }
@@ -56,32 +51,17 @@ getSocialAPI = () => {
       .then(function (data) {
         activitiesData.push(data);
         console.log(activitiesData);
-        var titlesData = window.localStorage.setItem(
-          "titles",
-          JSON.stringify(activitiesData)
-        );
-        if (titlesData != null) {
-          // not sure whether to use inner text or text content??
-          firstActivity.innerText = titlesData[0].activity;
-          secondActivity.innerText = titlesData[1].activity;
-          thirdActivity.innerText = titlesData[2].activity;
-        }
+        // window.localStorage.setItem("titles", JSON.stringify(activitiesData));
+        firstActivity.innerText = activitiesData[0].activity;
+        secondActivity.innerText = activitiesData[1].activity;
+        thirdActivity.innerText = activitiesData[2].activity;
       });
   }
 };
 
-// renderActivities = () => {
-//   if (activitiesData != null) {
-//     firstActivity.innerText = titlesData.activity[0];
-//     secondActivity.innerText = titlesData.activity[1];
-//     thirdActivity.innerText = titlesData.activity[2];
-//   }
-// };
-
 if (soloOrSocial === "solo") {
   getSoloAPI();
-  //   renderActivities();
 } else if (soloOrSocial === "social") {
   getSocialAPI();
-  //   renderActivities();
 }
+
