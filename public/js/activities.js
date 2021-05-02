@@ -65,6 +65,3 @@ if (soloOrSocial === "solo") {
   getSocialAPI();
 }
 
-$(document).on("click", ".activityBtn", () => {
-  $("post-form").removeClass("hide");
-});
