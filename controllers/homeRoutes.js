@@ -41,7 +41,8 @@ router.get("/users", withAuth, async (req, res) => {
         },
       ],
     });
-    const serializedData = exampleData.map((data) => data.get({ plain: true }));
+    const serializedData = exampleData.map((data) => data.get({ plain: true })).reverse();
+    
     console.log(serializedData);
     res.render("profile", {
       serializedData,
