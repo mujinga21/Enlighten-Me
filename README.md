@@ -6,11 +6,14 @@ A full stack application that generates random activities given a users preferan
 
 ## Table of Contents
 
+-[Deployed Site](#deployed)
 -[Project](#project)
 -[Credits](#credits)
 -[Questions](#questions)
 
+## Deployed
 
+[Deployed Site](https://fierce-spire-72565.herokuapp.com/)
  
 ## Project 
 
