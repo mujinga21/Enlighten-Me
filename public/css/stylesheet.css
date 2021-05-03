@@ -11,10 +11,20 @@ a {
   font-family: "Catamaran", sans-serif;
 }
 
-h1 {
+h1, h2 {
   font-family: "Bree Serif", serif;
   color: #283044;
 }
+
+h2 {
+  position:relative;
+  overflow:hidden;
+    margin: 0 0.5rem;
+  
+    animation: bounce; 
+    animation-duration: 2s; 
+}
+
 
 .hide {
   display: none;
@@ -126,7 +136,10 @@ h1 {
   cursor: pointer !important;
 }
 
+
+
 .container-login {
   width: 600px;
 
 }
+
