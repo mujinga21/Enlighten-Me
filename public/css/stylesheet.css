@@ -125,3 +125,8 @@ h1 {
 .file-upload {
   cursor: pointer !important;
 }
+
+.container-login {
+  width: 600px;
+
+}
