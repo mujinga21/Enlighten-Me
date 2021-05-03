@@ -1,10 +1,11 @@
+
 // VARIABLES
 var firstActivity = document.getElementById("activityOne");
 var secondActivity = document.getElementById("activityTwo");
 var thirdActivity = document.getElementById("activityThree");
 
 var socialURL =
-  "http://www.boredapi.com/api/activity?participants=2&participants=3&participants=4&participants=5&participants=6";
+  "https://www.boredapi.com/api/activity?participants=2&participants=3&participants=4&participants=5&participants=6";
 
 // ARRAYS
 var activitiesData = [];
@@ -13,15 +14,20 @@ var activitiesData = [];
 var activityPrice = localStorage.getItem("paidActivities");
 var soloOrSocial = localStorage.getItem("soloOrSocial");
 
+// renderActivities = () => {
+//   firstActivity.innerText = activitiesData[0].activity;
+//   secondActivity.innerText = activitiesData[1].activity;
+//   thirdActivity.innerText = activitiesData[2].activity;
+// }
 // API bored fetch to get solo/free data
 function getSoloAPI() {
   for (var i = 0; i < 3; i++) {
     if (activityPrice == "y") {
       var soloURL =
-        "http://www.boredapi.com/api/activity?participants=1&price=0.0";
+        "https://www.boredapi.com/api/activity?participants=1&price=0.0";
     } else {
       soloURL =
-        "http://www.boredapi.com/api/activity?participants=1&minprice=0.01&maxprice=0.1";
+        "https://www.boredapi.com/api/activity?participants=1&minprice=0.01&maxprice=0.1";
     }
     fetch(soloURL)
       .then(function (response) {
@@ -32,12 +38,14 @@ function getSoloAPI() {
         activitiesData.push(data);
         // window.localStorage.setItem("titles", JSON.stringify(activitiesData));
         console.log(activitiesData);
-
-        firstActivity.innerText = activitiesData[0].activity;
-        secondActivity.innerText = activitiesData[1].activity;
-        thirdActivity.innerText = activitiesData[2].activity;
-      });
-  }
+        if ( activitiesData.length === 3) {
+          firstActivity.innerText = activitiesData[0].activity;
+          secondActivity.innerText = activitiesData[1].activity;
+          thirdActivity.innerText = activitiesData[2].activity;
+        }
+      })
+    }
+    // renderActivities();
 }
 
 // API bored fetch to get social data
@@ -59,9 +67,12 @@ getSocialAPI = () => {
   }
 };
 
+
 if (soloOrSocial === "solo") {
   getSoloAPI();
+  // renderActivities();
 } else if (soloOrSocial === "social") {
   getSocialAPI();
 }
+
 
