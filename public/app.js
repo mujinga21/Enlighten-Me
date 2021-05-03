@@ -3,8 +3,8 @@ var CLOUDINARY_UPLOAD_PRESET = 'lev9pkkj';
 
 var imgPreview = document.getElementById('img-preview');
 var fileUpload = document.getElementById('file-upload');
-
-fileUpload.addEventListener('change', function(event) {
+console.log(fileUpload);
+fileUpload.addEventListener('click', function(event) {
     var file = event.target.files[0];
     var formDATA = new FormData();
     formDATA.append('file', file);
