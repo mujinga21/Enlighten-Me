@@ -1,4 +1,3 @@
-
 // VARIABLES
 var firstActivity = document.getElementById("activityOne");
 var secondActivity = document.getElementById("activityTwo");
@@ -14,11 +13,6 @@ var activitiesData = [];
 var activityPrice = localStorage.getItem("paidActivities");
 var soloOrSocial = localStorage.getItem("soloOrSocial");
 
-// renderActivities = () => {
-//   firstActivity.innerText = activitiesData[0].activity;
-//   secondActivity.innerText = activitiesData[1].activity;
-//   thirdActivity.innerText = activitiesData[2].activity;
-// }
 // API bored fetch to get solo/free data
 function getSoloAPI() {
   for (var i = 0; i < 3; i++) {
@@ -31,13 +25,10 @@ function getSoloAPI() {
     }
     fetch(soloURL)
       .then(function (response) {
-        console.log(response);
         return response.json();
       })
       .then(function (data) {
         activitiesData.push(data);
-        // window.localStorage.setItem("titles", JSON.stringify(activitiesData));
-        console.log(activitiesData);
         if ( activitiesData.length === 3) {
           firstActivity.innerText = activitiesData[0].activity;
           secondActivity.innerText = activitiesData[1].activity;
@@ -45,24 +36,22 @@ function getSoloAPI() {
         }
       })
     }
-    // renderActivities();
-}
+};
 
 // API bored fetch to get social data
 getSocialAPI = () => {
   for (var i = 0; i < 3; i++) {
     fetch(socialURL)
       .then(function (response) {
-        console.log(response);
         return response.json();
       })
       .then(function (data) {
         activitiesData.push(data);
-        console.log(activitiesData);
-        // window.localStorage.setItem("titles", JSON.stringify(activitiesData));
-        firstActivity.innerText = activitiesData[0].activity;
-        secondActivity.innerText = activitiesData[1].activity;
-        thirdActivity.innerText = activitiesData[2].activity;
+        if ( activitiesData.length === 3) {
+          firstActivity.innerText = activitiesData[0].activity;
+          secondActivity.innerText = activitiesData[1].activity;
+          thirdActivity.innerText = activitiesData[2].activity;
+        }
       });
   }
 };
@@ -70,9 +59,8 @@ getSocialAPI = () => {
 
 if (soloOrSocial === "solo") {
   getSoloAPI();
-  // renderActivities();
 } else if (soloOrSocial === "social") {
   getSocialAPI();
-}
+};
 
 
