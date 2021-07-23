@@ -2,7 +2,7 @@
 
 ## Description
 
-A full stack application that generates random activities given a users preferance between a solo or social experience. The user can choose there acitivites and create a post to document their experience.
+A full stack application that generates random activities given a users preferance between a solo or social experience. The user can choose their acitivites and create a post to document their experience.
 
 ## Table of Contents
 
@@ -45,7 +45,7 @@ If you have any questions contact us at:
 
 [Jenny Dinh](https://www.linkedin.com/in/jennifer-dinh-154a80116/)
 
-[Mujunga Williams](https://www.linkedin.com/in/mujinga-williams-85183393/)
+[Mujinga Williams](https://www.linkedin.com/in/mujinga-williams-85183393/)
 
 [Aftaab Dobani](https://www.linkedin.com/in/aftaab-dobani-57b4811b2/)
 
